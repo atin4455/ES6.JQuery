@@ -1,0 +1,23 @@
+﻿<div id="myDiv">
+    <!-- 這裡是現有的 HTML，會插入模板字串生成的內容 -->
+</div>
+
+<!-- 可以加一些外部腳本 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // 1. 使用模板字串生成 HTML 內容
+        let dynamicContent = 'Click Me!';
+        let htmlContent = `<div class="dynamic-item" id="Button1">
+                              <button>${dynamicContent}</button>
+                           </div>`;
+
+        // 2. 使用 jQuery 將生成的 HTML 插入到 #myDiv 容器中
+        $('#myDiv').append(htmlContent);
+
+        // 3. 使用 jQuery 來操作新插入的按鈕，添加事件處理
+        $('#Button1').click(function () {
+            alert('Button clicked!');
+        });
+    });
+</script>
